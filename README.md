@@ -11,4 +11,4 @@ Mainly it requires 3 platforms:
 
 3. pc_app - Admin and Display applications are running on Linux PC.
 
-Please refer gh-pages branch for the html based getting started guide for climate-control-demo.
+Please refer http://flowcloud.github.io/PRIV-climate-control-demo/ for further details on setting up and using the system.
