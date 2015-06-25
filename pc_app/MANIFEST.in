@@ -1,0 +1,9 @@
+include climate_control/doc/source/*.rst
+include climate_control/doc/source/conf.py
+include climate_control/doc/Makefile
+include climate_control/admin/mainwindow.ui
+include climate_control/display/mainwindow.ui
+include climate_control/common/ui/login.ui
+include climate_control/common/ui/resource.qrc
+include climate_control/common/ui/images/*.png
+include LICENSE
