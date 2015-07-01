@@ -1,8 +1,8 @@
-# climate Control Demo
+# Climate Control Demo
 
-Climate control demo system using Wi-Fire boards & Creator Ci20 and PC based application for configuration and displaying the temperature & humidity graphs.
+A climate control demo system using Wi-Fire boards, a Creator Ci20 and PC based applications for administration and display of  temperature & humidity readings.
 
-Hardware requirements:
+#### Hardware requirements:
 
 1. Creator Ci20 - The 'controller' block runs on a Creator Ci20
 
