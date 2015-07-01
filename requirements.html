@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Climate Control Demo</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="./images/img-icon.png">
+</head>
+
+<body>
+	<div id="GlobalHeaderContainer">
+		<div id="GlobalHeader">
+			<div class="logo">
+				<a href="http://flow.imgtec.com/developers" target="_blank"><img src="./images/flowcloud_logo.png" width="90%" height="90%" /></a>
+            </div>
+			<div class="sitetitle">Climate Control</div>
+		</div>
+	</div>
+	<div id="NavContainer">
+		<nav>
+			<div class="navlink">
+				<a href="index.html">Home</a>
+			</div>
+			<div class="navlink">
+				<a href="requirements.html">Requirements</a>
+			</div>	
+			<div class="navlink">    
+				<a href="devicesetup.html">Device Setup</a>
+			</div>
+			<div class="navlink">
+				<a href="starting_the_system.html">Starting the System</a>
+			</div>
+			<div class="navlink">
+				<a href="download.html">Download</a>
+			</div>
+			<div class="navlink">
+				<a href="reference.html">Reference</a>
+			</div>
+		</nav>
+	</div>
+	
+	
+    <div class="content">
+    <br/><br/>
+    <h1>Hardware Requirements</h1>
+    <p>In order to set up the Climate Control Demo System, you will need some basic equipment to get it up and running. Please ensure you have the following:</p>
+
+    <div>
+      <table>
+      	 <thead>
+		  <tr>
+		     <th>Serial No</th>
+		     <th>Hardware name</th>
+		     <th>Quantity</th>		     
+		  </tr>
+		 </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+            	PIC32MZ based Digilent's chipKIT Wi-Fire development board<br/>
+            	<a href="http://www.digilentinc.com/Products"><span class="inline-comment-marker"><span data-ref="ac841fab-2c58-4a95-a559-51e972c80d7c">http://www.digilentinc.com/Products/CatalogLandPage.cfm</span></span></a>
+            </td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              	Arduino compatible Base shield V2<br/>
+                SKU: SLD01099P<br/>
+                <a href="http://www.seeedstudio.com/depot/base-shield-v13-p-1378.html?cPath=132_134">http://www.seeedstudio.com/depot/base-shield-v13-p-1378.html?cPath=132_134</a>
+            </td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              Arduino compatible Grove - Temp&amp;Humi Sensor<br/>
+                SKU: SEN11301P<br/>
+                (Connectors are provided with the sensor package)<br>
+                <a href="http://www.seeedstudio.com/depot/Grove-TempHumi-Sensor-p-745.html?cPath=25_125">http://www.seeedstudio.com/depot/Grove-TempHumi-Sensor-p-745.html?cPath=25_125</a>
+            </td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              Arduino compatible Grove - Temperature Sensor,<br/>
+                SKU: SEN23292P<br/>
+                (Connectors are provided with the sensor package)<br/>
+                <a href="http://www.seeedstudio.com/depot/Grove-Temperature-Sensor-p-774.html">http://www.seeedstudio.com/depot/Grove-Temperature-Sensor-p-774.html</a>
+            </td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              Arduino compatible Grove -
+                Relay<br>
+                SKU: COM22639P<br>
+                (Connectors are provided with the relay package)<br>
+                <a href="http://www.seeedstudio.com/depot/Grove-Relay-p-769.html">http://www.seeedstudio.com/depot/Grove-Relay-p-769.html</a>
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              MPLAB-X
+                Compatible ICD3 Programmer/Debugger tool<br>
+                <a href="http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DV164035">http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=DV164035</a>
+            </td>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              Ubuntu 14.04
+                Linux machine<br>
+                <a href="http://www.ubuntu.com/download/desktop">http://www.ubuntu.com/download/desktop</a>&nbsp;
+            </td>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              Ci20 Creator
+                board<br>
+                <a href="http://flow.imgtec.com/developers/help/ci20">http://flow.imgtec.com/developers/help/Ci20</a>&nbsp;
+            </td>
+            <td>
+              1
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+   	<h1>Software Requirements</h1>
+   	<p>
+   		Download MPLAB IPE v3.00 from <a href="http://microchip.wikidot.com/ipe:installation" target="_blank">http://microchip.wikidot.com/ipe:installation</a>
+           This IPE will be required to program the embedded hex file on the Wi-Fire boards. There are separate sections for installing on Windows and Linux. Please follow as per your host pc.
+   	</p>
+   		
+    </div>
+    
+    
+   <p>&nbsp;<br/><br/><br/><br/><p>
+   <p>&nbsp;<br/><br/><br/><br/><p>
+   <p>&nbsp;<br/><br/><br/><br/><p>        
+    
+    </div>
+   <p>&nbsp;<br/><br/><br/><br/><p>
+	<div id="FooterMainContainer">
+		<div id="FooterContainer">
+			<div class="footerlogo">
+				<a href="http://www.imgtec.com" target="_blank"><img src="./images/img-footer-logo-grey.png" width="100%" height="100%" /></a>
+			</div>
+			<div class="copyright">&copy; Imagination Technologies Limited<br> All rights reserved</div>
+		</div>
+	</div>
+</body>
+
+</html>    

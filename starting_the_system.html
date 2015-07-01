@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Climate Control Demo</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="./images/img-icon.png">
+</head>
+
+<body>
+	<div id="GlobalHeaderContainer">
+		<div id="GlobalHeader">
+			<div class="logo">
+				<a href="http://flow.imgtec.com/developers" target="_blank"><img src="./images/flowcloud_logo.png" width="90%" height="90%" /></a>
+            </div>
+			<div class="sitetitle">Climate Control</div>
+		</div>
+	</div>
+	<div id="NavContainer">
+		<nav>
+			<div class="navlink">
+				<a href="index.html">Home</a>
+			</div>
+			<div class="navlink">
+				<a href="requirements.html">Requirements</a>
+			</div>	
+			<div class="navlink">
+				<a href="devicesetup.html">Device Setup</a>
+			</div>
+			<div class="navlink">
+				<a href="starting_the_system.html"  class="current">Starting the System</a>
+			</div>
+			<div class="navlink">
+				<a href="download.html">Download</a>
+			</div>
+			<div class="navlink">
+				<a href="reference.html">Reference</a>
+			</div>
+		</nav>
+	</div>
+	
+	
+    <div class="content">
+    		<br/><br/>
+	    <h1>Starting the System</h1>
+	    
+	    <h2>Wi-Fire</h2>
+	    <h3>Powering your Wi-Fire board</h3>
+	    <p>
+	    	Connect your Wi-Fire board to a PC or laptop computer with a USB cable, unless your application uses more than 300 mA, 
+	    	in which case you should use an external power supply rated at 5V DC, 500 mA. Follow the instructions below to power up your board 
+	    	using either a USB cable, or external power supply
+	    </p>
+	    
+	    <h4>Using a USB cable</h4>
+	    <ul>
+	    	<li>Use Jumper J16 (C) to select the USB cable (UART) power source.</li>
+	    	<li>Connect the Wi-Fire's USB mini B connector (B) to your computer's USB port.</li>
+	    </ul>
+	    
+	    <h4>Using a 5V 500 mA power supply</h4>
+	    <ul>
+	    	<li>Use Jumper J16 (C) to select the 'EXT' power source.</li>
+	    	<li>Connect the power supply to Wi-Fire's 5V DC power connector (A).</li>
+	    </ul>
+	    
+	    <h3>Configuring serial console for Wi-Fire boards</h3>
+	    <ul>
+	    	<li>Connect the board to your PC using a mini USB cable - For Windows, wait for the driver installation to complete.</li>
+	    	<li>You will need to identify the COM port that the Wi-Fire board is connected to (in case of windows as host PC - check 
+	    		'Device Manager' &gt; 'Ports') or /dev/ttyUSBx (in case of Linux as host PC).</li>
+	    	<li>Install and run any serial terminal program - e.g. Tera Term, minicom, PuTTY, Hyper Terminal etc</li>
+	    	<li>On Windows, some utilities automatically detects the COM port so that you can connect to that particular USB Serial Port i.e. for ex. COM1 port.</li>
+	    	<li>For linux, check /dev/tty list and plug/unplug usb cable to the board and look for which device is 
+	    	getting added in the list after connecting the usb cable. e.g. its /dev/ttyUSB0.</li>
+	    	<li>Configure the serial terminal program to use this port, with: baud rate of 115200, 8 data bits, 1 stop bit and no parity, hardware control as OFF.</li>
+	    </ul>	
+	    
+	    <h2>Wi-Fire Sensor</h2>	    
+	    <h3>Hardware Configuration</h3>
+	   	<ul>
+	    	<li>Connect the Grove Arduino Base Shield to the Wi-Fire board </li>
+	    	<li>Connect the Grove Temperature Sensor to port A2 of the Grove Arduino Base Shield</li>
+	    	<li>Connect the Grove Temperature and Humidity Sensor to port A1 of the Grove Arduino Base Shield </li>	    	
+	    </ul>
+	    
+	    <h3>To register your Wi-Fire board as a Sensor with this account, you need a Device Registration Key:</h3>
+	   	<ul>
+	    	<li>
+	    		Please follow the instructions:
+	    		<ul>
+	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers/user/login" target="_blank">http://flow.imgtec.com/developers/user/login</a></li>
+	    			<li>Go to the 'My Devices' page.</li>
+	    			<li>Select the 'Registration' tab.</li>
+	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
+	    			<li>Take a note of your device registration key.</li>
+	    		</ul>
+	    	</li>
+	    	<li>Set the Device Type to 'ClimateControlDemoSensor' and generate a key</li>
+	    </ul>
+	    
+	    <h3>Using the terminal emulator, enter the following sequence of commands</h3>
+	   	<ul>
+	    	<li>set devreg_key - Follow the on-screen instructions and enter the device registration key that you have just generated when prompted</li>
+	    	<li>set network_config - Follow the instructions for setting up your wireless access point credentials. 
+	    	When prompted whether to force the device into interactive mode next time it reboots, be sure to enter 'y' for yes.</li>
+	    	<li>reboot - This will restart Wi-Fire in Wi-Fi connected mode.</li>	    	
+	    </ul>
+	    
+	    <p>You should see following within the serial console output:</p>
+	   	<div class="c-cmd-line">
+			Device Type 'ClimateControlDemoSensor'<br/><br/>
+			s/w version Type '1.0'[INFO] ---------Initialize ClimateSensor------<br/>
+			SIP Response:::SIP/2.0 200 OK<br/>
+			SYS_UI Uptime = 0 days, 0 hours, 0 min, 59 second<br/>
+			HTTP GET  <a href="https://ws-uat.flowworld.com/users/1952b818-f313" target="_blank">https://ws-uat.flowworld.com/users/1952b818-f313</a> /devices/owned?pageSize=20 response 200<br/><br/>
+			[INFO] found device of type ClimateControlDemoController<br/><br/>
+			[INFO] ---------Initialize ClimateSensor Done------						
+		</div>
+		
+	    <h2>Wi-Fire Actuator</h2>	    
+	    <h3>Hardware Configuration</h3>
+	   	<ul>
+	    	<li>Connect the Grove Arduino Base Shield to the Wi-Fire board </li>
+	    	<li>Connect a Grove Relay to port D2 </li>
+	    	<li>Connect a Grove Relay to port D3 </li>	    	
+	    </ul>
+	    
+	   	<h3>To register your Wi-Fire board as a Sensor with this account, you need a Device Registration Key:</h3>
+	   	<ul>
+	    	<li>
+	    		Please follow the instructions:
+	    		<ul>
+	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers/user/login" target="_blank">http://flow.imgtec.com/developers/user/login</a></li>
+	    			<li>Go to the 'My Devices' page.</li>
+	    			<li>Select the 'Registration' tab.</li>
+	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
+	    			<li>Take a note of your device registration key.</li>
+	    		</ul>
+	    	</li>
+	    	<li>Set the Device Type to 'ClimateControlDemoActuator' and generate a key</li>
+	    </ul>
+	    
+	   	<h3>Using the terminal emulator, enter the following sequence of commands</h3>
+	   	<ul>
+	    	<li>set devreg_key - Follow the on-screen instructions and enter the device registration key that you have just generated when prompted</li>
+	    	<li>
+	    		set network_config - Follow the instructions for setting up your wireless access point credentials. 
+	    		When prompted whether to force the device into interactive mode next time it reboots, be sure to enter 'y' for yes.
+	    	</li>
+	    	<li>reboot - This will restart Wi-Fire in Wi-Fi connected mode.</li>
+	    </ul>
+	    
+	   	<p>You should see following output in the serial console:</p>
+	   	<div class="c-cmd-line">
+			Device Type 'ClimateControlDemoActuator'<br/><br/>
+			s/w version Type '1.0'[INFO] ---------Initialize Climate Actuator------<br/>
+			HTTP GET <a href="https://ws-uat.flowworld.com/users/1952b818-f313-4223-8380-68dad7a95774/devices/owned?pageSize=20" target="_blank">https://ws-uat.flowworld.com/users/1952b818-f313-4223-8380-68dad7a95774/devices/owned?pageSize=20</a> response 200<br/><br/>
+			[INFO] Found device of type ClimateControlDemoController<br/><br/>
+			[INFO] Relay_1 = OFF, Relay_2 = OFF Time = 13:20:30<br/><br/>
+			[INFO] ---------Initialization of Climate Actuator Done------
+									
+		</div>
+	    	
+	    <h2>Ci20 Controller</h2>	    
+	   	<h3>To register your Ci20 board as Controller with this account, you need a Device Registration Key:</h3>
+	   	<ul>
+	    	<li>
+	    		Please follow the instructions
+	    		<ul>
+	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers/user/login" target="_blank">http://flow.imgtec.com/developers/user/login</a></li>
+	    			<li>Go to the 'My Devices' page.</li>
+	    			<li>Select the 'Registration' tab.</li>
+	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
+	    			<li>Take a note of your device registration key.</li>
+	    		</ul>
+	    	</li>
+	    	<li>Set the Device Type to 'ClimateControlDemoActuator' and generate a key</li>
+	    </ul> 
+	    
+	   	<h3>Start the Controller app on Ci20 board</h3>
+	   	<p>The flowclimatecontroller application requires the flow account credentials in the flow_controller.cnf file.</p>
+	   	<ul>
+	    	<li>
+	    		Either you can create this "flow_controller.cnf" file upfront with all those details, 
+	    		else it will ask for all the details on the command line when running the conroller for the first time.
+	    		Once you have provided those details, flowclimatecontroller will be registered to your account on the FlowCloud server. 
+	    		The file should be in the same folder as the application.
+	    	</li>
+	    	<li>
+	    		The fields in flow_controller.cnf:<br/><br/>
+				Server_Address=http://ws-uat.flowworld.com<br/>
+				Auth_Key=Ph3bY5kkU4P6vmtT<br/>
+				Secret_Key=Sd1SVBfYtGfQvUCR<br/>
+				Device_Type=ClimateControlDemoController<br/>
+				MAC_Addr=<br/>
+				Serial_Num=FFFFFFFFFFFF<br/>
+				Device_Name=<br/>
+				Devreg_Key=<br/>		
+	    	</li>
+	    	<li>
+	    		Fill in the MAC address of your device (entering "ifconfig" in the terminal will display the "HWaddr" associated with eth0 - 
+	    		this is your MAC address - enter it without colons e.g. A1251B3CC4F2)</li>
+	    	<li>Give the device a name that will allow you to identify it</li>
+	    	<li>enter the devreg_key generated on the Flow Developer Website</li>
+	    </ul>
+	    <p>
+	    	If this has worked successfully you can run the controller from a terminal by navigating to it's directory and typing ./flowclimatecontroller.mipsel.bin.
+	    	If this does not work make sure that the file is marked as "executable". You should see a console output similar to this example:
+	    </p>
+	    
+	   	<div class="c-cmd-line">
+			root@ci20:/home/ci20/work/controller# ./flowclimatecontroller.mipsel.bin<br/><br/>
+			Flow Interface initialized successfully<br/><br/>
+			[INFO]: ---------Initialize Controller------<br/><br/>
+			Entering Interactive Mode<br/><br/>
+		</div> 	     
+		
+		<p>
+			You can also start the flowclimatecontroller in debug mode to see more detailed console output and debug information. 
+			Just run "./flowclimatecontroller.mipsel.bin DEBUG_LEVEL 4".
+		</p> 
+		
+	   	<h3>QT Admin app on Linux PC</h3>
+	   	<p>Go to the pc_app folder.</p>	
+
+	   	<div class="c-cmd-line">
+			#cd climate-control-demo/pc_app<br/><br/>
+			#python climate_control/admin
+		</div> 	
+		
+		<p>You can check session logs for QT Admin app in climate_control/logs.</p>
+		<p><img height="473" width="624" border="0" src="images/image002.png" id="Picture 2"></p>
+		
+	   	<h3>QT Display app on Linux PC</h3>
+	   	<p>Go to the pc_app folder from different terminal.</p>	
+
+	   	<div class="c-cmd-line">
+			#cd climate-control-demo/pc_app<br/><br/>
+			#python climate_control/display
+		</div> 	
+		
+		<p>You can check session logs for QT Display app in climate_control/logs</p>
+		<p><img height="473" width="624" border="0" src="images/image003.png" id="Picture 3"></p>		
+		
+    
+    </div>
+    
+    
+   <p>&nbsp;<br/><br/><br/><br/></p>
+	<div id="FooterMainContainer">
+		<div id="FooterContainer">
+			<div class="footerlogo">
+				<a href="http://www.imgtec.com" target="_blank"><img src="./images/img-footer-logo-grey.png" width="100%" height="100%" /></a>
+			</div>
+			<div class="copyright">&copy; Imagination Technologies Limited<br> All rights reserved</div>
+		</div>
+	</div>
+</body>
+
+</html>    

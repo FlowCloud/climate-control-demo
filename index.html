@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Climate Control Demo</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="./images/img-icon.png">
+</head>
+
+<body>
+	<div id="GlobalHeaderContainer">
+		<div id="GlobalHeader">
+			<div class="logo">
+				<a href="http://flow.imgtec.com/developers" target="_blank"><img src="./images/flowcloud_logo.png" width="90%" height="90%" /></a>
+            </div>
+			<div class="sitetitle">Climate Control</div>
+		</div>
+	</div>
+	<div id="NavContainer">
+		<nav>
+			<div class="navlink">
+				<a href="index.html" class="current">Home</a>
+			</div>
+			<div class="navlink">
+				<a href="requirements.html">Requirements</a>
+			</div>			
+			<div class="navlink">
+				<a href="devicesetup.html">Device Setup</a>
+			</div>
+			<div class="navlink">
+				<a href="starting_the_system.html">Starting the System</a>
+			</div>
+			<div class="navlink">
+				<a href="download.html">Download</a>
+			</div>
+			<div class="navlink">
+				<a href="reference.html">Reference</a>
+			</div>
+		</nav>
+	</div>
+	
+	
+    <div class="content">
+
+		<br/><br/>
+		<h1>Introduction</h1>
+		<p>The Climate Control Demo demonstrates the capabilities of FlowCloud, a platform developed by Imagination Technologies. This project is an example of how FlowCloud can be used to create useful and practical IoT solutions</p>
+
+		<img src="./images/key_visual.png"/>
+		<br/><br/>		
+		<h1>Project Summary</h1>
+		<h2>What does it do?</h2>
+		<ul>
+			<li>The Sensor board measures temperature and humidity and sends the readings to the Controller.</li>
+			<li>
+				The Actuator board has 2 relays attached that will toggle on and off when the Controller sends commands to it.
+				The Temperature relay will be "on" when the measured temperature is below the threshold set by the Admin app (representing a heater), and the Humidity relay will be 
+				 "off" when the humidity is below the threshold set by the Admin app (representing a fan).
+			</li>
+			<li>
+				The Controller takes the values given by the Sensor and when those values exceed thresholds it toggles the Actuator relays. 
+				The threshold is set by the Admin app. It also provides the data to the Display app.
+			</li>
+			<li>The Admin app is for setting the thresholds for the actuator control, and also for forcing the actuators into specific states.</li>
+			<li>The Display app is for showing the current temperature and humidity values, as well as graphing the most recent data.</li>
+			<li>
+				The temperature and humidity readings (Wi-Fire Sensor) are sent to the Controller (Ci20 or Linux) and the Controller then toggles relays 
+				 (Wi-Fire Actuator) based on the readings. When it take these actions, relevant information gets updated on the Display app (Linux).
+			</li>
+		</ul>
+		
+		<h2>How does it work?</h2>
+		<h3>FlowCloud SDK</h3>		
+		<ul>
+			<li>FlowCloud SDK has two major components. FlowCore and FlowMessaging.</li>
+			<li>FlowCore allows users to log in as user, log in as device, store settings on the KVS, upload data on the device datastore, log events, etc. etc.</li>
+			<li>FlowMessaging enables users to send messages from user to user, user to device or device to user. It also allows the use of a Publish, Subscribe, Notify mechanism.</li>
+		</ul>	
+		
+		<h3>FlowCore</h3>
+		<h4>Key Value Store</h4>
+		<p>The Admin app posts the user set values to a Key Value Store which the Controller app reads from. 
+		 	That means the settings are retained through power cycles (it configures itself from the Key Value Store).
+		 </p>
+		 
+		<h4>Device Data Store</h4>
+		<p>The Controller can upload the measurement data into device data store on the FlowCloud, enabling users to view the measurement data at a later point. 
+		 so by retrieving this historical data they can even process some analytic on it. (This feature is not present in the current phase, its planned for future)
+		 </p>
+		 
+		<h3>FlowMessaging</h3>		
+		<ul>
+             <li>
+             	The Wi-Fire&nbsp;Sensor board gets temperature and humidity readings from its Grove sensors via an Arduino shield. It then sends these readings out via
+                FlowMessage to the Controller running on Ci20. It shows the device to device Flow Messaging. 
+             </li>
+             <li>
+             	If these readings meet threshold criteria the Controller sends a FlowMessage to the Actuator board. Again an example of device to device Flow Messaging.
+             </li>
+             <li>
+             	The Admin app sends messages to the Controller to manually turn the actuators on and off. It shows user to device Flow Messaging.</li>
+             <li>
+             	Controller sends heartbeat messages to Display app so that it can show the device status whether they are online or offline. It shows the device to user Flow
+                    Messaging.
+             </li>
+             <li>
+             	Note that the key part of this system that all communication is done via Flowcloud, so all the components can be separated across different networks, over
+                any distance,&nbsp;as long as they have an internet connection.
+             </li>
+		</ul>	
+		
+    </div>
+    
+    <p>&nbsp;<br/><br/><br/><br/><p>
+	<div id="FooterMainContainer">
+		<div id="FooterContainer">
+			<div class="footerlogo">
+				<a href="http://www.imgtec.com" target="_blank"><img src="./images/img-footer-logo-grey.png" width="100%" height="100%" /></a>
+			</div>
+			<div class="copyright">&copy; Imagination Technologies Limited<br> All rights reserved</div>
+		</div>
+	</div>
+</body>
+
+</html>
