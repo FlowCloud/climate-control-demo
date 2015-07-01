@@ -1,14 +1,13 @@
-# PRIV-climate-control-demo
-Private repo for staging/assurance of 'climate-control-demo' project
+# climate Control Demo
 
-Climate control demo system using Wi-Fire boards & Creator CI20 and PC based application for configuration and displaying the temperature & humidity graphs.
+Climate control demo system using Wi-Fire boards & Creator Ci20 and PC based application for configuration and displaying the temperature & humidity graphs.
 
-Mainly it requires 3 platforms:
+Hardware requirements:
 
-1. ci20 - Controller block is running on Creator Ci20 platform
+1. Creator Ci20 - The 'controller' block runs on a Creator Ci20
 
-2. wifire - Sensor and Actuator blocks are running on WiFire boards.
+2. Wi-Fire - The 'sensor' and 'actuator' blocks  run on Wi-Fire boards
 
-3. pc_app - Admin and Display applications are running on Linux PC.
+3. pc_app - The Admin and Display applications run on a Linux PC
 
-Please refer http://flowcloud.github.io/PRIV-climate-control-demo/ for further details on setting up and using the system.
+See the [Getting Started Guide](http://flowcloud.github.io/climate-control-demo/) for details on setting up and using the system.
