@@ -73,19 +73,17 @@
 		<h3>FlowCloud SDK</h3>		
 		<ul>
 			<li>FlowCloud SDK has two major components. FlowCore and FlowMessaging.</li>
-			<li>FlowCore allows users to log in as user, log in as device, store settings on the KVS, upload data on the device datastore, log events, etc. etc.</li>
+			<li>FlowCore supports core functionality such as allowing users to log in as user, log in as device, store settings on the Key Value Store (KVS), upload data on the owned device datastore and log events.</li>
 			<li>FlowMessaging enables users to send messages from user to user, user to device or device to user. It also allows the use of a Publish, Subscribe, Notify mechanism.</li>
 		</ul>	
 		
 		<h3>FlowCore</h3>
 		<h4>Key Value Store</h4>
-		<p>The Admin app posts the user set values to a Key Value Store which the Controller app reads from. 
-		 	That means the settings are retained through power cycles (it configures itself from the Key Value Store).
+		<p>The Admin app saves the user's configuration to a Key Value Store (KVS) which is read by the Controller app, allowing settings to be shared and retained through power cycles.
 		 </p>
 		 
 		<h4>Device Data Store</h4>
-		<p>The Controller can upload the measurement data into device data store on the FlowCloud, enabling users to view the measurement data at a later point. 
-		 so by retrieving this historical data they can even process some analytic on it. (This feature is not present in the current phase, its planned for future)
+		<p>The Controller uploads measurement data to the device data store on FlowCloud, enabling users to view latest & recent measurement data.
 		 </p>
 		 
 		<h3>FlowMessaging</h3>		
@@ -98,9 +96,9 @@
              	If these readings meet threshold criteria the Controller sends a FlowMessage to the Actuator board. Again an example of device to device Flow Messaging.
              </li>
              <li>
-             	The Admin app sends messages to the Controller to manually turn the actuators on and off. It shows user to device Flow Messaging.</li>
+             	The Admin app can send messages to the Controller to turn the actuators on and off. It shows user to device Flow Messaging.</li>
              <li>
-             	Controller sends heartbeat messages to Display app so that it can show the device status whether they are online or offline. It shows the device to user Flow
+             	The Controller sends heartbeat messages for actuators, sensors, and the controller to the Display app so that it can show the device status whether they are online or offline. It shows the device to user Flow
                     Messaging.
              </li>
              <li>
