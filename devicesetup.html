@@ -69,13 +69,32 @@
     	</ol>
     	
     	<h2>Setting up Wi-Fire boards</h2>
+		<h3>Powering your Wi-Fire board</h3>
+	    <p>
+	    	Connect your Wi-Fire board to a PC or laptop computer with a USB cable, unless your application uses more than 300 mA, 
+	    	in which case you should use an external power supply rated at 5V DC, 500 mA. Follow the instructions below to power up your board 
+	    	using either a USB cable, or external power supply
+	    </p>
+	    
+	    <h4>Using a USB cable</h4>
+	    <ul>
+	    	<li>Use Jumper J16 (C) to select the USB cable (UART) power source.</li>
+	    	<li>Connect the Wi-Fire's USB mini B connector (B) to your computer's USB port.</li>
+	    </ul>
+	    
+	    <h4>Using a 5V 500 mA power supply</h4>
+	    <ul>
+	    	<li>Use Jumper J16 (C) to select the 'EXT' power source.</li>
+	    	<li>Connect the power supply to Wi-Fire's 5V DC power connector (A).</li>
+	    </ul>
+		<h3>Flashing the Wi-Fire board</h3>
 		<ul>
 			 <li>
 			 	Please refer to <a href="http://flow.imgtec.com/developers/develop/embedded/pic32mz-free-rtos/prg-hex-files" target="_blank">How to flash an application hex file on Wi-Fire board?</a> 
 			 	for the instructions to flash hex files onto a Wi-Fire board.
 			 </li>
              <li>Flash one board with the Sensor hex file, and one with the Actuator hex file.</li>
-             <li>Instructions for connecting the shields and components are below.</li>
+             <li>Instructions for connecting the shields and components are in "Starting the System".</li>
 		</ul> 
 		
 		<h2>Setting up Ci20</h2>
