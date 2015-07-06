@@ -65,14 +65,18 @@
 	    </ul>
 	    
 	    <h3>Configuring serial console for Wi-Fire boards</h3>
-	    <ul>
-	    	<li>Connect the board to your PC using a mini USB cable - For Windows, wait for the driver installation to complete.</li>
-	    	<li>You will need to identify the COM port that the Wi-Fire board is connected to (in case of windows as host PC - check 
-	    		'Device Manager' &gt; 'Ports') or /dev/ttyUSBx (in case of Linux as host PC).</li>
+	    <h4>Windows</h4>
+		<ul>
+	    	<li>Connect the board to your PC using a mini USB cable and wait for the driver installation to complete.</li>
 	    	<li>Install and run any serial terminal program - e.g. Tera Term, minicom, PuTTY, Hyper Terminal etc</li>
-	    	<li>On Windows, some utilities automatically detects the COM port so that you can connect to that particular USB Serial Port i.e. for ex. COM1 port.</li>
-	    	<li>For linux, check /dev/tty list and plug/unplug usb cable to the board and look for which device is 
-	    	getting added in the list after connecting the usb cable. e.g. its /dev/ttyUSB0.</li>
+			<li>You will need to identify the COM port that the Wi-Fire board is connected to. To do this open Device Manager and look for "USB Serial Device" in the "Ports" section</li>
+	    	<li>Configure the serial terminal program to use the port you found in device manager (i.e. COM3); baud rate("speed") of 115200; 8 data bits; 1 stop bit and no parity; hardware control as OFF.</li>
+	    </ul>	
+		<h4>Linux</h4>
+		<ul>
+	    	<li>Connect the board to your PC using a mini USB cable.</li>
+	    	<li>Install and run any serial terminal program - e.g. Tera Term, minicom, PuTTY, Hyper Terminal etc</li>
+	    	<li>Navigate to /dev/ and plug/unplug Wi-Fire's usb cable and look for which device is getting added to the list. e.g. /dev/ttyUSB0.</li>
 	    	<li>Configure the serial terminal program to use this port, with: baud rate of 115200, 8 data bits, 1 stop bit and no parity, hardware control as OFF.</li>
 	    </ul>	
 	    
