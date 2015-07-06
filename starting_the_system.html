@@ -92,12 +92,11 @@
 	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers" target="_blank">http://flow.imgtec.com/developers</a></li>
 	    			<li>Go to the 'My Devices' page.</li>
 	    			<li>Select the 'Registration' tab.</li>
-	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>From the drop-down list of device types, select ClimateControlDemoSensor.</li>
 	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
 	    			<li>Take a note of your device registration key.</li>
 	    		</ul>
 	    	</li>
-	    	<li>Set the Device Type to 'ClimateControlDemoSensor' and generate a key</li>
 	    </ul>
 	    
 	    <h3>Using the terminal emulator, enter the following sequence of commands</h3>
@@ -112,13 +111,10 @@
 	   	<div class="c-cmd-line">
 			Device Type 'ClimateControlDemoSensor'<br/><br/>
 			s/w version Type '1.0'[INFO] ---------Initialize ClimateSensor------<br/>
-			SIP Response:::SIP/2.0 200 OK<br/>
-			SYS_UI Uptime = 0 days, 0 hours, 0 min, 59 second<br/>
-			HTTP GET  <a href="https://ws-uat.flowworld.com/users/1952b818-f313" target="_blank">https://ws-uat.flowworld.com/users/1952b818-f313</a> /devices/owned?pageSize=20 response 200<br/><br/>
-			[INFO] found device of type ClimateControlDemoController<br/><br/>
+			...<br>
 			[INFO] ---------Initialize ClimateSensor Done------						
 		</div>
-		
+		<p>Note that the console output within the initialization process will vary depending on the state of your Climate Control Demo at runtime.</p>
 	    <h2>Wi-Fire Actuator</h2>	    
 	    <h3>Hardware Configuration</h3>
 	   	<ul>
@@ -127,7 +123,7 @@
 	    	<li>Connect a Grove Relay to port D3 </li>	    	
 	    </ul>
 	    
-	   	<h3>To register your Wi-Fire board as a Sensor with this account, you need a Device Registration Key:</h3>
+	   	<h3>To register your Wi-Fire board as an Actuator with this account, you need a Device Registration Key:</h3>
 	   	<ul>
 	    	<li>
 	    		Please follow the instructions:
@@ -135,12 +131,11 @@
 	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers" target="_blank">http://flow.imgtec.com/developers</a></li>
 	    			<li>Go to the 'My Devices' page.</li>
 	    			<li>Select the 'Registration' tab.</li>
-	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>From the drop-down list of device types, select ClimateControlDemoActuator.</li>
 	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
 	    			<li>Take a note of your device registration key.</li>
 	    		</ul>
 	    	</li>
-	    	<li>Set the Device Type to 'ClimateControlDemoActuator' and generate a key</li>
 	    </ul>
 	    
 	   	<h3>Using the terminal emulator, enter the following sequence of commands</h3>
@@ -153,19 +148,17 @@
 	    	<li>reboot - This will restart Wi-Fire in Wi-Fi connected mode.</li>
 	    </ul>
 	    
-	   	<p>You should see following output in the serial console:</p>
+	   	<p>You should see these lines within your console output:</p>
 	   	<div class="c-cmd-line">
 			Device Type 'ClimateControlDemoActuator'<br/><br/>
 			s/w version Type '1.0'[INFO] ---------Initialize Climate Actuator------<br/>
-			HTTP GET <a href="https://ws-uat.flowworld.com/users/1952b818-f313-4223-8380-68dad7a95774/devices/owned?pageSize=20" target="_blank">https://ws-uat.flowworld.com/users/1952b818-f313-4223-8380-68dad7a95774/devices/owned?pageSize=20</a> response 200<br/><br/>
-			[INFO] Found device of type ClimateControlDemoController<br/><br/>
-			[INFO] Relay_1 = OFF, Relay_2 = OFF Time = 13:20:30<br/><br/>
+			... <br>
 			[INFO] ---------Initialization of Climate Actuator Done------
 									
 		</div>
-	    	
+	    <p>Note that the console output within the initialization process will vary depending on the state of your Climate Control Demo at runtime.</p>
 	    <h2>Ci20 Controller</h2>	    
-	   	<h3>To register your Ci20 board as Controller with this account, you need a Device Registration Key:</h3>
+	   	<h3>To register your Ci20 board as Controller you need a Device Registration Key:</h3>
 	   	<ul>
 	    	<li>
 	    		Please follow the instructions
@@ -173,22 +166,21 @@
 	    			<li>Log in to your FlowCloud account at <a href="http://flow.imgtec.com/developers" target="_blank">http://flow.imgtec.com/developers</a></li>
 	    			<li>Go to the 'My Devices' page.</li>
 	    			<li>Select the 'Registration' tab.</li>
-	    			<li>From the drop-down list of device types, select appropriate device type.</li>
+	    			<li>From the drop-down list of device types, select ClimateControlDemoController.</li>
 	    			<li>Under 'Registration Method B', click the 'Get New Code' button to retrieve your device registration key.</li>
 	    			<li>Take a note of your device registration key.</li>
 	    		</ul>
 	    	</li>
-	    	<li>Set the Device Type to 'ClimateControlDemoActuator' and generate a key</li>
 	    </ul> 
 	    
 	   	<h3>Start the Controller app on Ci20 board</h3>
-	   	<p>The flowclimatecontroller application requires the flow account credentials in the flow_controller.cnf file.</p>
+	   	<p>The flowclimatecontroller application requires Flow server configuration settings in the flow_controller.cnf file.</p>
 	   	<ul>
 	    	<li>
-	    		Either you can create this "flow_controller.cnf" file upfront with all those details, 
-	    		else it will ask for all the details on the command line when running the conroller for the first time.
-	    		Once you have provided those details, flowclimatecontroller will be registered to your account on the FlowCloud server. 
-	    		The file should be in the same folder as the application.
+	    		Either you can create this "flow_controller.cnf" file upfront with all required details, 
+	    		else it will ask for all the details on the command line when running the controller for the first time.
+	    		Once you have provided the details, flowclimatecontroller will be registered to your account on the FlowCloud server. 
+	    		"flow_controller.cnf" should be in the same folder as the application.
 	    	</li>
 	    	<li>
 	    		The fields in flow_controller.cnf:<br/><br/>
@@ -205,7 +197,7 @@
 	    		Fill in the MAC address of your device (entering "ifconfig" in the terminal will display the "HWaddr" associated with eth0 - 
 	    		this is your MAC address - enter it without colons e.g. A1251B3CC4F2)</li>
 	    	<li>Give the device a name that will allow you to identify it</li>
-	    	<li>enter the devreg_key generated on the Flow Developer Website</li>
+	    	<li>Enter the device registration key generated on the Flow Developer Website</li>
 	    </ul>
 	    <p>
 	    	If this has worked successfully you can run the controller from a terminal by navigating to it's directory and typing ./flowclimatecontroller.mipsel.bin.
