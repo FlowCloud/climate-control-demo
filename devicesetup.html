@@ -114,22 +114,20 @@
 			To install the Ci20 flow libraries, login to Ci20 board and connect to the internet (via WiFi or Ethernet). 
             The default username and password are both Ci20. For more details on Ci20 please refer to 
             <a href="http://flow.imgtec.com/developers/help/ci20/setup" target="_blank">Ci20 Setup</a>).
-            To get latest release of flowsdk, please enter the following on your Ci20 terminal.		
 		</p>
-		
-		<h3>Updating Flow libraries</h3>
+		<h3>Adding Flowsdk.list as a source</h3>
+		If flowsdk.list is not present in /etc/apt/source.list.d, do the following:
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
 			#sudo apt-get update<br/>
-			#sudo apt-get install libflowmessaging-devel libflowcore-devel						
+					
 		</div>
 		
-		<h3>Installing flowclimatecontroller on Ci20 board</h3>
-		<p>To get latest public release of flowclimatecontroller.</p>
+		<h3>Installing flowclimatecontroller and its dependencies</h3>
+		<p>To get latest public release of flowclimatecontroller we must remove the flowstarterapp (if installed) and install flowclimatecontroller instead.</p>
 		<div class="c-cmd-line">
-			#cd /etc/apt/sources.list.d/<br/>
-			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
+			#sudo apt-get remove flowstarterapp<br>
 			#sudo apt-get update<br/>
 			#sudo apt-get install flowclimatecontroller						
 		</div>
