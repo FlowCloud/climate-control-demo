@@ -114,8 +114,8 @@
             The default username and password are both Ci20. For more details on Ci20 please refer to 
             <a href="http://flow.imgtec.com/developers/help/ci20/setup" target="_blank">Ci20 Setup</a>).
 		</p>
-		<h3>Adding flowsdk.list as a source</h3>
-		If flowsdk.list is not present in /etc/apt/source.list.d, do the following:
+		<h3>1. Adding flowsdk.list as a source</h3>
+		If flowsdk.list is present in /etc/apt/source.list.d, skip to step 2.
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
@@ -123,7 +123,7 @@
 					
 		</div>
 		
-		<h3>Installing flowclimatecontroller and its dependencies</h3>
+		<h3>2. Installing flowclimatecontroller and its dependencies</h3>
 		<p>To get latest public release of flowclimatecontroller we must remove the flowstarterapp (if installed) and install flowclimatecontroller instead.</p>
 		<div class="c-cmd-line">
 			#sudo apt-get remove flowstarterapp<br>
@@ -135,15 +135,15 @@
 		
 		<h2>Setting up Linux PC for the Admin and Display apps</h2>
 
-		<h3>Adding flowsdk.list as a source</h3>
-		If flowsdk.list is not present in /etc/apt/source.list.d, do the following:
+		<h3>1. Adding flowsdk.list as a source</h3>
+		If flowsdk.list is present in /etc/apt/source.list.d, skip to step 2.
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
 			#sudo apt-get update<br/>
 					
 		</div>
-		<h3>Updating Flow libraries along with python wrappers</h3>
+		<h3>2. Updating Flow libraries along with python wrappers</h3>
 		<div class="c-cmd-line">
 			#sudo apt-get update<br/>
 			#sudo apt-get install libflowmessaging-devel libflowcore-devel<br/>
@@ -151,7 +151,7 @@
 			#sudo apt-get install libflowcore-python
 		</div>	
 		
-		<h3>Installing required python packages for Display and Admin applications</h3>
+		<h3>3. Installing required python packages for Display and Admin applications</h3>
 		<p>
 			In order to run the QT based Display and Admin python applications, the following packages need to be installed.
 		</p>
