@@ -44,7 +44,7 @@
     		<br/><br/>
     	<h1>Device Setup</h1>
     	<p>
-    		This section contains all the steps required to get the devices (and Linux platform) set up for the Climate Control Demo System. 
+    		This section contains all the steps required to get the devices (and Linux platform) set up for the Climate Control Demo. 
     		You will need to download the climate-control-demo-1.0.0 release from
     		<a href="https://github.com/FlowCloud/climate-control-demo/releases" target="_blank">here</a>. You will need the files on Ci20, your Linux platform and your Windows platform (if you are using Windows for MPLAB X). <br/><br/>
     		 After extracting the climate-control-demo-1.0.0.zip , you will see 3 folders:
@@ -109,13 +109,12 @@
 		<p>Please follow the instructions in the <a href="sourcecode.html">Source Code</a> section.</p>
 		
 		<h2>Setting up Ci20</h2>
-		<h3>Installing flow libraries on Ci20 board</h3>
 		<p>
-			To install the Ci20 flow libraries, login to Ci20 board and connect to the internet (via WiFi or Ethernet). 
+			Login to the Ci20 board and connect to the internet (via WiFi or Ethernet). 
             The default username and password are both Ci20. For more details on Ci20 please refer to 
             <a href="http://flow.imgtec.com/developers/help/ci20/setup" target="_blank">Ci20 Setup</a>).
 		</p>
-		<h3>Adding Flowsdk.list as a source</h3>
+		<h3>Adding flowsdk.list as a source</h3>
 		If flowsdk.list is not present in /etc/apt/source.list.d, do the following:
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
@@ -135,16 +134,17 @@
 		
 		
 		<h2>Setting up Linux PC for the Admin and Display apps</h2>
-		<h3>Installing flow libraries and python wrappers on linux PC</h3>
-		<p>
-			To install the flow libraries and python wrappers on linux PC, login to ubuntu machine with sudo access. 
-			To get latest public release of flowsdk, please enter the following in your linux terminal.
-		</p>
-		
-		<h3>Updating Flow libraries along with python wrappers</h3>
+
+		<h3>Adding flowsdk.list as a source</h3>
+		If flowsdk.list is not present in /etc/apt/source.list.d, do the following:
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
+			#sudo apt-get update<br/>
+					
+		</div>
+		<h3>Updating Flow libraries along with python wrappers</h3>
+		<div class="c-cmd-line">
 			#sudo apt-get update<br/>
 			#sudo apt-get install libflowmessaging-devel libflowcore-devel<br/>
 			#sudo apt-get install libflowmessaging-python<br/>
@@ -153,8 +153,7 @@
 		
 		<h3>Installing required python packages for Display and Admin applications</h3>
 		<p>
-			To install the required python packages on linux PC, login to ubuntu machine with sudo access. 
-			In order to run the QT based Display and Admin python applications, following packages need to be installed on the linux machine.
+			In order to run the QT based Display and Admin python applications, the following packages need to be installed.
 		</p>
 		<div class="c-cmd-line">
 			#sudo apt-get install python2.7<br/>

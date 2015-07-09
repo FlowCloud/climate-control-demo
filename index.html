@@ -49,27 +49,27 @@
 		<img src="./images/key_visual.png"/>
 		<br/><br/>		
 		<h1>Project Summary</h1>
-		<h2>What does it do?</h2>
+		<h2>Module Description</h2>
 		<ul>
-			<li>The Sensor board measures temperature and humidity and sends the readings to the Controller.</li>
+			<li><b>The Sensor</b> Wi-Fire board measures temperature and humidity and sends the readings to the Ci20 Controller.</li>
 			<li>
-				The Actuator board has 2 relays attached that will toggle on and off when the Controller sends commands to it.
-				The Temperature relay will be "on" when the measured temperature is below the threshold set by the Admin app (representing a heater), and the Humidity relay will be 
-				 "off" when the humidity is below the threshold set by the Admin app (representing a fan).
+				<b>The Actuator</b> Wi-Fire board has 2 relays attached that will toggle on and off when the Controller sends commands to it.
+				The Temperature relay will be "on" when the measured temperature is below the threshold set by the Linux Admin app (representing a heater), and the Humidity relay will be 
+				 "off" when the humidity is below the threshold set by the Linux Admin app (representing a fan).
 			</li>
 			<li>
-				The Controller takes the values given by the Sensor and when those values exceed thresholds it toggles the Actuator relays. 
+				<b>The Ci20 Controller</b> takes the values given by the Sensor and when those values exceed thresholds it toggles the Actuator relays. 
 				The threshold is set by the Admin app. It also provides the data to the Display app.
 			</li>
-			<li>The Admin app is for setting the thresholds for the actuator control, and also for forcing the actuators into specific states.</li>
-			<li>The Display app is for showing the current temperature and humidity values, as well as graphing the most recent data.</li>
+			<li><b>The Admin app</b> is for setting the thresholds for the actuator control, and also for forcing the actuators into specific states. Runs on Linux.</li>
+			<li><b>The Display app</b> is for showing the current temperature and humidity values, as well as graphing the most recent data. Runs on Linux.</li>
 			<li>
 				The temperature and humidity readings (Wi-Fire Sensor) are sent to the Controller (Ci20 or Linux) and the Controller then toggles relays 
-				 (Wi-Fire Actuator) based on the readings. When it take these actions, relevant information gets updated on the Display app (Linux).
+				(Wi-Fire Actuator) based on the readings. The Admin app configures the Controller. Current measurements and relay status is presented on the Display app (Linux).
 			</li>
 		</ul>
 		
-		<h2>How does it work?</h2>
+		<h2>FlowCloud Features</h2>
 		<h3>FlowCloud SDK</h3>		
 		<ul>
 			<li>FlowCloud SDK has two major components. FlowCore and FlowMessaging.</li>
@@ -79,7 +79,7 @@
 		
 		<h3>FlowCore</h3>
 		<h4>Key Value Store</h4>
-		<p>The Admin app saves the user's configuration to a Key Value Store (KVS) which is read by the Controller app, allowing settings to be shared and retained through power cycles.
+		<p>The Admin app saves the user's configuration to a Key Value Store (KVS) which is read by the Controller app, allowing settings to be retained through power cycles.
 		 </p>
 		 
 		<h4>Device Data Store</h4>
@@ -89,21 +89,21 @@
 		<h3>FlowMessaging</h3>		
 		<ul>
              <li>
-             	The Wi-Fire&nbsp;Sensor board gets temperature and humidity readings from its Grove sensors via an Arduino shield. It then sends these readings out via
-                FlowMessage to the Controller running on Ci20. It shows the device to device Flow Messaging. 
+             	The Wi-Fire Sensor board gets temperature and humidity readings from its Grove sensors via an Arduino shield. It then sends these readings out via
+                FlowMessage to the Controller running on Ci20. This demonstrates device to device Flow Messaging. 
              </li>
              <li>
-             	If these readings meet threshold criteria the Controller sends a FlowMessage to the Actuator board. Again an example of device to device Flow Messaging.
+             	If these readings meet threshold criteria the Controller sends a FlowMessage to the Actuator board. Another example of device to device Flow Messaging.
              </li>
              <li>
-             	The Admin app can send messages to the Controller to turn the actuators on and off. It shows user to device Flow Messaging.</li>
+             	The Admin app can send messages to the Controller to turn the actuators on and off (Using "Force on/Force off"). This demonstrates user to device Flow Messaging.</li>
              <li>
-             	The Controller sends heartbeat messages for actuators, sensors, and the controller to the Display app so that it can show the device status whether they are online or offline. It shows the device to user Flow
+             	The Controller sends heartbeat messages for actuators, sensors, and the controller to the Display app so that it can show the device status whether they are online or offline. This demonstrates device to user Flow
                     Messaging.
              </li>
              <li>
-             	Note that the key part of this system that all communication is done via Flowcloud, so all the components can be separated across different networks, over
-                any distance,&nbsp;as long as they have an internet connection.
+             	Note that the key part of this system that all communication is done via Flowcloud, so all the components can be separated across different networks and over
+                any distance as long as they have an internet connection.
              </li>
 		</ul>
 		<br/><br/>	
