@@ -44,7 +44,8 @@
     		<br/><br/>
     	<h1>Device Setup</h1>
     	<p>
-    		This section contains all the steps required to get the devices (and Linux platform) set up for the Climate Control Demo. 
+    		This section contains all the steps required to get the devices (and Linux platform) set up for the Climate Control Demo.
+			Once you have completed the steps on this page, <a href="starting_the_system.html">Starting the System</a> covers how to run and use the demo.
     		You will need to download the climate-control-demo-1.0.0 release from
     		<a href="https://github.com/FlowCloud/climate-control-demo/releases" target="_blank">here</a>. You will need the files on Ci20, your Linux platform and your Windows platform (if you are using Windows for MPLAB X). <br/><br/>
     		 After extracting the climate-control-demo-1.0.0.zip , you will see 3 folders:
@@ -111,27 +112,36 @@
 		<h2>Setting up Ci20</h2>
 		<p>
 			Login to the Ci20 board and connect to the internet (via WiFi or Ethernet). 
-            The default username and password are both Ci20. For more details on Ci20 please refer to 
+            The default username and password are both ci20. For more details on Ci20 please refer to 
             <a href="http://flow.imgtec.com/developers/help/ci20/setup" target="_blank">Ci20 Setup</a>).
 		</p>
-		<h3>1. Adding flowsdk.list as a source</h3>
-		If flowsdk.list is present in /etc/apt/source.list.d, skip to step 2.
+		<h3>Adding flowsdk.list as a source</h3>
+		If flowsdk.list is present in /etc/apt/source.list.d, skip to one of the install steps below.
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
 			#sudo apt-get update<br/>
 					
 		</div>
-		
-		<h3>2. Installing flowclimatecontroller and its dependencies</h3>
+		<p><b>You can either install the controller software using a pre-built package, or by using the binary from GitHub and installing the dependencies.</b></p>
+		<ul>
+		<li><h4>Installing flowclimatecontroller from package server</h3></li>
 		<p>To get latest public release of flowclimatecontroller we must remove the flowstarterapp (if installed) and install flowclimatecontroller instead.</p>
 		<div class="c-cmd-line">
 			#sudo apt-get remove flowstarterapp<br>
 			#sudo apt-get update<br/>
 			#sudo apt-get install flowclimatecontroller						
 		</div>
-		<p><span class="q-bold">Note that these instructions can also be followed on a Linux PC if you prefer.</span></p>		
+		<b>-- OR --</b>
+		<li><h4>Installing flowclimatecontroller using downloaded binary</h4></li>
+		Download the .mipsel controller binary from GitHub onto Ci20
+		<div class="c-cmd-line">
+			#sudo apt-get update<br/>
+			#sudo apt-get install libflowcore-devel libflowmessaging-devel<br>				
+		</div>
 		
+		</ul>
+		<p><span class="q-bold">Note that these instructions can also be followed on a Linux PC if you prefer.</span></p>
 		
 		<h2>Setting up Linux PC for the Admin and Display apps</h2>
 
