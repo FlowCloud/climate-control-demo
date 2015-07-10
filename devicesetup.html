@@ -116,13 +116,14 @@
             <a href="http://flow.imgtec.com/developers/help/ci20/setup" target="_blank">Ci20 Setup</a>).
 		</p>
 		<h3>Adding flowsdk.list as a source</h3>
-		If flowsdk.list is present in /etc/apt/source.list.d, skip to one of the install steps below.
+		If flowsdk.list is not present in /etc/apt/source.list.d, run the following terminal commands.
 		<div class="c-cmd-line">
 			#cd /etc/apt/sources.list.d/<br/>
 			#sudo wget <a href="http://deb.flowworld.com/flowsdk.list" target="_blank">http://deb.flowworld.com/flowsdk.list</a><br/>
 			#sudo apt-get update<br/>
 					
 		</div>
+		<h3>Installing the controller</h3>
 		<p><b>You can either install the controller software using a pre-built package, or by using the binary from GitHub and installing the dependencies.</b></p>
 		<ul>
 		<li><h4>Installing flowclimatecontroller from package server</h3></li>
