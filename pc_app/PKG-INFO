@@ -5,7 +5,7 @@ Summary: Climate Control Demo
 Home-page: http://flowcloud.github.io/climate-control-demo/
 Author: Imagination Technologies
 Author-email: FlowCloud-support@imgtec.com
-License: Modified BSD
+License: FlowCloud License
 Description: PC based applications for administration and display of temperature & humidity readings in the climate-control-demo.
 Platform: Linux PC
 Provides: climate_control

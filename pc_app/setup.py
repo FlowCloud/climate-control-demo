@@ -86,10 +86,10 @@ _, EXTERNAL_VERSION = get_app_version()
 
 setup(name="climate_control",
       version=EXTERNAL_VERSION,
-      description="Flow climate control app",
-      author="IMG",
+      description="PC based applications for administration and display of temperature & humidity readings in the climate-control-demo.",
+      author="Imagination Technologies",
       packages=find_packages(),
-      license="Modified BSD",
+      license="FlowCloud License",
       package_data={
           "climate_control": [
               "version.txt",
